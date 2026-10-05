@@ -21,8 +21,6 @@ Portal berita berbasis web tempat pengguna bisa membaca, menulis, dan mendiskusi
 
 ## Teknologi
 
-<img width="437" height="436" alt="image" src="https://github.com/user-attachments/assets/5c5395f5-5772-4dbb-afba-08ea2267dcba" />
-
 - **Frontend**: HTML, CSS, dan JavaScript (tanpa framework)
 - **Backend**: Node.js, Express 5
 - **Database**: PostgreSQL (library `pg`)
@@ -30,10 +28,7 @@ Portal berita berbasis web tempat pengguna bisa membaca, menulis, dan mendiskusi
 
 ## Cara menjalankan
 
-<img width="1882" height="920" alt="image" src="https://github.com/user-attachments/assets/0ec2eedc-eb52-401d-8aaf-c257480aeb27" />
-
 ### Prasyarat
-
 - [Node.js](https://nodejs.org) 18 atau lebih baru
 - [PostgreSQL](https://www.postgresql.org/download/)
 
