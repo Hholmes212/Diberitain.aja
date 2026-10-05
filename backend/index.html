@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diberitain.aja - Portal Berita Terkini</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1 class="logo">Diberitain.aja</h1>
+            <nav class="nav-menu">
+                <a href="#home" class="nav-item">Home</a>
+                <a href="#hotNews" class="nav-item">Hot News</a>
+                <a href="#category" class="nav-item">Category</a>
+                <a href="#current" class="nav-item">Current</a>
+                <a href="#add" class="nav-item">Add</a>
+            </nav>
+            <div class="header-right">
+                <input type="text" placeholder="Search..." class="search-box">
+                <div id="authButtons">
+                    <button id="loginBtn" class="btn-secondary">Login</button>
+                    <button id="registerBtn" class="btn-primary">Register</button>
+                </div>
+                <div id="userMenu" class="user-menu" style="display: none;">
+                    <span id="username"></span>
+                    <button id="logoutBtn" class="btn-secondary">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Welcome Section -->
+    <section id="home" class="welcome-section">
+        <div class="container welcome-container">
+            <img src="illustration.png" alt="Community" class="welcome-illustration">
+            <div class="welcome-text">
+                <h2>Welcome to Our Blog!</h2>
+                <p>Get the latest and most trusted news from various categories. Join our community to share and read
+                    interesting stories every day. Stay updated with current events and be part of a vibrant community
+                    of news enthusiasts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hot News Section -->
+    <section id="hotNews" class="hot-news-section">
+        <div class="container">
+            <h2 class="section-title">Hot News!</h2>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <div class="carousel" id="hotNewsCarousel"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category Section -->
+    <section id="category" class="category-section">
+        <div class="container">
+            <h2 class="section-title">Category</h2>
+            <div class="category-tabs">
+                <button class="category-tab active" data-category="all">All</button>
+                <button class="category-tab" data-category="Technology">Technology</button>
+                <button class="category-tab" data-category="Business">Business</button>
+                <button class="category-tab" data-category="Sports">Sports</button>
+                <button class="category-tab" data-category="Politics">Politics</button>
+                <button class="category-tab" data-category="Entertainment">Entertainment</button>
+            </div>
+            <div class="category-carousel">
+                <div class="category-news" id="categoryNews"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Current Section -->
+    <section id="current" class="current-section">
+        <div class="container">
+            <h2 class="section-title">Current</h2>
+            <div class="current-container">
+                <div class="news-detail" id="newsDetail">
+                    <div class="placeholder-detail">
+                        <p>Select any news to see detail!</p>
+                    </div>
+                </div>
+                <div class="comments-section">
+                    <h3>Comments</h3>
+                    <div class="comments-list" id="commentsList"></div>
+                    <div class="comment-form" id="commentForm" style="display: none;">
+                        <textarea id="commentInput" placeholder="Type here..."></textarea>
+                        <button id="submitComment" class="btn-primary">Post Comment</button>
+                    </div>
+                    <p id="commentLoginPrompt" style="text-align: center; color: #666;">Login to comment</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add Section -->
+    <section id="add" class="add-section">
+        <div class="container">
+            <h2 class="section-title">Add</h2>
+            <div class="add-container">
+                <div class="add-form">
+                    <h3 id="formTitle">News Title</h3>
+                    <input type="text" id="newsTitle" placeholder="Enter news title..." class="input-field" disabled>
+                    <select id="categorySelect" class="input-field" disabled>
+                        <option value="">Select category</option>
+                        <option value="Technology">Technology</option>
+                        <option value="Business">Business</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Politics">Politics</option>
+                        <option value="Entertainment">Entertainment</option>
+                    </select>
+                    <textarea id="newsContent" placeholder="Write your news content here..." class="textarea-field"
+                        disabled></textarea>
+                </div>
+                <div class="add-right">
+                    <div class="upload-box disabled" id="uploadBox">
+                        <p>Drag and drop or click to upload</p>
+                        <p class="upload-hint">Image or Video</p>
+                        <p class="upload-hint" style="margin-top: 20px; color: #999;">Please login to upload news</p>
+                        <input type="file" id="mediaInput" accept="image/*,video/*" style="display: none;" disabled>
+                        <div id="mediaPreview"></div>
+                    </div>
+                    <button id="uploadNewsBtn" class="btn-upload" disabled>Add news here!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>2024 Diberitain.aja - Your Trusted News Source</p>
+            <!-- Link dihilangkan sesuai permintaan -->
+        </div>
+    </footer>
+
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Login</h2>
+            <form id="authForm">
+                <input type="text" id="authUsername" placeholder="Username" class="input-field" style="display: none;">
+                <input type="email" id="authEmail" placeholder="Email" class="input-field" required>
+                <input type="password" id="authPassword" placeholder="Password" class="input-field" required>
+                <button type="submit" class="btn-primary btn-full">Submit</button>
+            </form>
+            <p id="authSwitch">Don't have an account? <span id="switchLink">Register</span></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
