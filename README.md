@@ -1,5 +1,8 @@
 # Diberitain.aja
 
+<img width="1890" height="928" alt="image" src="https://github.com/user-attachments/assets/f8b05545-16a1-46f6-a4a5-ed4b063b4dfa" />
+
+
 Portal berita berbasis web tempat pengguna bisa membaca, menulis, dan mendiskusikan berita. Dilengkapi gambar/video berita, kategori, pencarian, like, share, dan komentar.
 
 ## Fitur
