@@ -2,8 +2,6 @@
 
 Portal berita berbasis web tempat pengguna bisa membaca, menulis, dan mendiskusikan berita. Dilengkapi gambar/video berita, kategori, pencarian, like, share, dan komentar.
 
-![Beranda](docs/screenshots/home.png)
-
 ## Fitur
 
 - **Akun pengguna**: daftar, login, dan logout memakai JWT; kata sandi disimpan dalam bentuk hash (bcrypt).
@@ -14,16 +12,6 @@ Portal berita berbasis web tempat pengguna bisa membaca, menulis, dan mendiskusi
 - **Tambah, edit, dan hapus berita** (hanya oleh penulisnya).
 - **Like, share, dan komentar** pada setiap berita.
 - **Aman dari XSS**: teks dari pengguna di-escape sebelum ditampilkan.
-
-## Tampilan
-
-| Hot News | Kategori |
-|---|---|
-| ![Hot News](docs/screenshots/hot-news.png) | ![Kategori](docs/screenshots/kategori.png) |
-
-| Detail & komentar | Tambah berita |
-|---|---|
-| ![Detail](docs/screenshots/detail-komentar.png) | ![Tambah](docs/screenshots/tambah-berita.png) |
 
 ## Teknologi
 
@@ -41,18 +29,18 @@ Portal berita berbasis web tempat pengguna bisa membaca, menulis, dan mendiskusi
 ### Langkah
 
 1. **Clone repo**
-   ```bash
+```bash
    git clone https://github.com/USERNAME/Diberitain.aja.git
    cd Diberitain.aja/backend
-   ```
+```
 
 2. **Buat database** (lewat pgAdmin atau psql)
-   ```sql
+```sql
    CREATE DATABASE blog_news_db;
-   ```
+```
 
 3. **Buat file `.env`** di folder `backend` dengan menyalin `.env.example`, lalu isi nilainya
-   ```env
+```env
    PORT=5001
    DB_USER=postgres
    DB_PASSWORD=password_postgres_kamu
@@ -61,14 +49,14 @@ Portal berita berbasis web tempat pengguna bisa membaca, menulis, dan mendiskusi
    DB_PORT=5432
    JWT_SECRET=kalimat_rahasia_yang_panjang_dan_acak
    JWT_EXPIRE=7d
-   ```
+```
 
 4. **Install dan jalankan**
-   ```bash
+```bash
    npm install
    npm run seed     # opsional: isi 11 berita contoh + akun demo
    npm start
-   ```
+```
 
 5. Buka **http://localhost:5001**
 
@@ -116,9 +104,3 @@ Endpoint yang butuh login memakai header `Authorization: Bearer <token>`.
 - Jangan pernah meng-commit file `.env`; sudah masuk `.gitignore`.
 - Ganti `JWT_SECRET` dengan nilai acak yang panjang sebelum dipakai di server publik.
 - Folder `uploads` tidak ikut repo. Saat deploy, gunakan penyimpanan yang permanen untuk file unggahan.
-
-## Rencana pengembangan
-
-- [ ] Paginasi daftar berita
-- [ ] Halaman profil pengguna
-- [ ] Deploy online (Render / Railway + Neon)
