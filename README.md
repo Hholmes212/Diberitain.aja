@@ -1,9 +1,8 @@
 # Diberitain.aja
 
-<img width="1890" height="928" alt="image" src="https://github.com/user-attachments/assets/f8b05545-16a1-46f6-a4a5-ed4b063b4dfa" />
-
-
 Portal berita berbasis web tempat pengguna bisa membaca, menulis, dan mendiskusikan berita. Dilengkapi gambar/video berita, kategori, pencarian, like, share, dan komentar.
+
+<img width="1890" height="928" alt="image" src="https://github.com/user-attachments/assets/f8b05545-16a1-46f6-a4a5-ed4b063b4dfa" />
 
 ## Fitur
 
@@ -15,6 +14,10 @@ Portal berita berbasis web tempat pengguna bisa membaca, menulis, dan mendiskusi
 - **Tambah, edit, dan hapus berita** (hanya oleh penulisnya).
 - **Like, share, dan komentar** pada setiap berita.
 - **Aman dari XSS**: teks dari pengguna di-escape sebelum ditampilkan.
+
+## Tampilan
+
+<img width="1886" height="423" alt="image" src="https://github.com/user-attachments/assets/2e3d612a-8b51-46b7-97b8-80e45d4119b1" />
 
 ## Teknologi
 
@@ -32,17 +35,20 @@ Portal berita berbasis web tempat pengguna bisa membaca, menulis, dan mendiskusi
 ### Langkah
 
 1. **Clone repo**
+
 ```bash
    git clone https://github.com/USERNAME/Diberitain.aja.git
    cd Diberitain.aja/backend
 ```
 
 2. **Buat database** (lewat pgAdmin atau psql)
+
 ```sql
    CREATE DATABASE blog_news_db;
 ```
 
 3. **Buat file `.env`** di folder `backend` dengan menyalin `.env.example`, lalu isi nilainya
+
 ```env
    PORT=5001
    DB_USER=postgres
@@ -55,6 +61,7 @@ Portal berita berbasis web tempat pengguna bisa membaca, menulis, dan mendiskusi
 ```
 
 4. **Install dan jalankan**
+
 ```bash
    npm install
    npm run seed     # opsional: isi 11 berita contoh + akun demo
